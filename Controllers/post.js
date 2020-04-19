@@ -7,7 +7,7 @@ exports.postById = (req,res,next,id) => {
     Post.findById(id)
     .populate("postedBy","_id name")
     .populate("comments.postedBy","_id name")
-    .select("_id title body created likes comments")
+    .select("_id title body created likes comments photo")
     .exec((err,post) => {
         if(err || !post) {
             return res.status(400).json({
