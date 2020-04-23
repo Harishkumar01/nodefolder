@@ -99,8 +99,12 @@ exports.forgotPassword = (req,res) => {
             from: 'noreply@node-react.com',
             to: email,
             subject: 'Password Reset Instructions',
-            text: `Please use the following link to reset your password: http://139.59.43.98:3000/reset-password/${token}`,
-            html: `<p>Please use the following link to reset your password:</p> <p> http://139.59.43.98:3000/reset-password/${token}</p>`
+            text: `Please use the following link to reset your password: ${
+                process.env.CLIENTFORG
+            }/reset-password/${token}`,
+            html: `<p>Please use the following link to reset your password:</p> <p>${
+                process.env.CLIENTFORG
+            }/reset-password/${token}</p>`
         }
         return user.updateOne({ resetPasswordLink: token }, (err, success) => {
             if (err) {
