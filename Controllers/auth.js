@@ -100,10 +100,10 @@ exports.forgotPassword = (req,res) => {
             to: email,
             subject: 'Password Reset Instructions',
             text: `Please use the following link to reset your password: ${
-                process.env.CLIENT_URL
+                process.env.CLIENTFORG
             }/reset-password/${token}`,
             html: `<p>Please use the following link to reset your password:</p> <p>${
-                process.env.CLIENT_URL
+                process.env.CLIENTFORG
             }/reset-password/${token}</p>`
         }
         return user.updateOne({ resetPasswordLink: token }, (err, success) => {
