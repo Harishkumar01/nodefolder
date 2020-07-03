@@ -4,7 +4,7 @@
   "description": "firstpack",
   "main": "App.js",
   "scripts": {
-    "test": "nodemon App.js"
+    "start": "nodemon App.js"
   },
   "author": "Harish",
   "license": "ISC",
