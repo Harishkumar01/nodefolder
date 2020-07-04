@@ -68,7 +68,6 @@ exports.requireSignin = expressjwt({
     //if the token is valid ,express jwt appends the verified users id in an
     // auth key to the request object
     secret: process.env.jwt_secret,
-    algorithms: ['RS256'],
     userProperty: "auth"
 
 
